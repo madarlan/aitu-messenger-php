@@ -1,18 +1,26 @@
+![Aitu Messenger PHP SDK](https://github.com/user-attachments/assets/6069cad7-d993-4ec4-a08d-0835ecd2e88d)
+
 # 🚀 Aitu Messenger PHP SDK
 
 > 🇰🇿 **Қазақ тіліндегі құжаттама** | 🇷🇺 **[Русская версия](README_ru.md)**
 
 <div align="center">
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/madarlan/aitu-messenger-php-sdk.svg?style=for-the-badge)](https://packagist.org/packages/madarlan/aitu-messenger-php-sdk)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/madarlan/aitu-messenger-php-sdk/run-tests.yml?branch=main&label=tests&style=for-the-badge)](https://github.com/madarlan/aitu-messenger-php-sdk/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/madarlan/aitu-messenger-php-sdk/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=for-the-badge)](https://github.com/madarlan/aitu-messenger-php-sdk/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/madarlan/aitu-messenger-php-sdk.svg?style=for-the-badge)](https://packagist.org/packages/madarlan/aitu-messenger-php-sdk)
-[![License](https://img.shields.io/packagist/l/madarlan/aitu-messenger-php-sdk.svg?style=for-the-badge)](https://packagist.org/packages/madarlan/aitu-messenger-php-sdk)
+[![Latest Version](https://img.shields.io/packagist/v/madarlan/aitu-messenger-php-sdk?style=flat-square&color=blue)](https://packagist.org/packages/madarlan/aitu-messenger-php-sdk)
+[![Tests](https://img.shields.io/github/actions/workflow/status/madarlan/aitu-messenger-php-sdk/run-tests.yml?branch=main&label=tests&style=flat-square&color=green)](https://github.com/madarlan/aitu-messenger-php-sdk/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![Code Style](https://img.shields.io/github/actions/workflow/status/madarlan/aitu-messenger-php-sdk/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square&color=orange)](https://github.com/madarlan/aitu-messenger-php-sdk/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![License](https://img.shields.io/packagist/l/madarlan/aitu-messenger-php-sdk?style=flat-square&color=purple)](https://packagist.org/packages/madarlan/aitu-messenger-php-sdk)
+[![PHP Version](https://img.shields.io/packagist/php-v/madarlan/aitu-messenger-php-sdk?style=flat-square&color=777BB4)](https://packagist.org/packages/madarlan/aitu-messenger-php-sdk)
 
-**Aitu Messenger API-мен интеграциялауға арналған ресми PHP SDK**
+**🎯 Aitu Messenger API-мен интеграциялауға арналған заманауи PHP SDK**
 
-*Laravel-мен терең интеграциясы бар Aitu Passport (OAuth) және Aitu Apps (Push хабарландырулар) толық қолдауы*
+*⚡ Laravel-мен терең интеграциясы бар Aitu Passport (OAuth) және Aitu Apps (Push хабарландырулар) толық қолдауы*
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20with-❤️-red?style=flat-square" alt="Made with Love">
+  <img src="https://img.shields.io/badge/Built%20for-Developers-blue?style=flat-square" alt="Built for Developers">
+  <img src="https://img.shields.io/badge/Production-Ready-green?style=flat-square" alt="Production Ready">
+</p>
 
 [📖 Құжаттама](#-құжаттама) • [🚀 Жылдам бастау](#-жылдам-бастау) • [💡 Мысалдар](#-мысалдар) • [🤝 Қолдау](#-қолдау)
 
@@ -84,7 +92,7 @@
 <table>
 <tr>
 <td align="center">
-<img src="https://raw.githubusercontent.com/php/php-src/master/Zend/zend_logo.png" width="50" height="50"><br>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="50" height="50"><br>
 <strong>PHP 8.1+</strong>
 </td>
 <td align="center">
@@ -880,7 +888,7 @@ LOG_LEVEL=debug
 ```
 MIT License
 
-Copyright (c) 2025 Madanov Arlan (apptu.dev)
+Copyright (c) 2025 Madinov Arlan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
