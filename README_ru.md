@@ -7,8 +7,6 @@
 <div align="center">
 
 [![Latest Version](https://img.shields.io/packagist/v/madarlan/aitu-messenger-php?style=flat-square&color=blue)](https://packagist.org/packages/madarlan/aitu-messenger-php)
-[![Tests](https://img.shields.io/github/actions/workflow/status/madarlan/aitu-messenger-php/run-tests.yml?branch=main&label=tests&style=flat-square&color=green)](https://github.com/madarlan/aitu-messenger-php/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![Code Style](https://img.shields.io/github/actions/workflow/status/madarlan/aitu-messenger-php/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square&color=orange)](https://github.com/madarlan/aitu-messenger-php/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![License](https://img.shields.io/packagist/l/madarlan/aitu-messenger-php?style=flat-square&color=purple)](https://packagist.org/packages/madarlan/aitu-messenger-php)
 [![PHP Version](https://img.shields.io/packagist/php-v/madarlan/aitu-messenger-php?style=flat-square&color=777BB4)](https://packagist.org/packages/madarlan/aitu-messenger-php)
 
