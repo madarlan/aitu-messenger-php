@@ -5,8 +5,8 @@ namespace MadArlan\AituMessenger\Http;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\RequestOptions;
-use Psr\Http\Message\ResponseInterface;
 use MadArlan\AituMessenger\Exceptions\AituApiException;
+use Psr\Http\Message\ResponseInterface;
 
 class HttpClient
 {
@@ -20,7 +20,7 @@ class HttpClient
             RequestOptions::TIMEOUT => 30,
             RequestOptions::CONNECT_TIMEOUT => 10,
             RequestOptions::HEADERS => [
-                'User-Agent' => 'AituMessenger-PHP-SDK/1.0',
+                'User-Agent' => 'AituMessenger-PHP/1.0',
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
             ],
@@ -30,8 +30,8 @@ class HttpClient
     /**
      * Выполнить GET запрос
      *
-     * @param string $url
-     * @param array $options
+     * @param  string  $url
+     * @param  array  $options
      * @return ResponseInterface
      * @throws AituApiException
      */
@@ -41,78 +41,11 @@ class HttpClient
     }
 
     /**
-     * Выполнить POST запрос
-     *
-     * @param string $url
-     * @param array $data
-     * @param array $options
-     * @return ResponseInterface
-     * @throws AituApiException
-     */
-    public function post(string $url, array $data = [], array $options = []): ResponseInterface
-    {
-        if (!empty($data)) {
-            $options[RequestOptions::JSON] = $data;
-        }
-
-        return $this->request('POST', $url, $options);
-    }
-
-    /**
-     * Выполнить PUT запрос
-     *
-     * @param string $url
-     * @param array $data
-     * @param array $options
-     * @return ResponseInterface
-     * @throws AituApiException
-     */
-    public function put(string $url, array $data = [], array $options = []): ResponseInterface
-    {
-        if (!empty($data)) {
-            $options[RequestOptions::JSON] = $data;
-        }
-
-        return $this->request('PUT', $url, $options);
-    }
-
-    /**
-     * Выполнить PATCH запрос
-     *
-     * @param string $url
-     * @param array $data
-     * @param array $options
-     * @return ResponseInterface
-     * @throws AituApiException
-     */
-    public function patch(string $url, array $data = [], array $options = []): ResponseInterface
-    {
-        if (!empty($data)) {
-            $options[RequestOptions::JSON] = $data;
-        }
-
-        return $this->request('PATCH', $url, $options);
-    }
-
-    /**
-     * Выполнить DELETE запрос
-     *
-     * @param string $url
-     * @param array $options
-     * @return ResponseInterface
-     * @throws AituApiException
-     */
-    public function delete(string $url, array $options = []): ResponseInterface
-    {
-        return $this->request('DELETE', $url, $options);
-    }
-
-    /**
      * Выполнить HTTP запрос
      *
-     * @param string $method
-     * @param string $url
-     * @param array $options
+     * @param  string  $method
+     * @param  string  $url
+     * @param  array  $options
      * @return ResponseInterface
      * @throws AituApiException
      */
@@ -122,17 +55,17 @@ class HttpClient
 
         try {
             $response = $this->client->request($method, $url, $options);
-            
+
             // Логирование успешного запроса (если включено)
             $this->logRequest($method, $url, $options, $response);
-            
+
             return $response;
         } catch (GuzzleException $e) {
             // Логирование ошибки (если включено)
             $this->logError($method, $url, $options, $e);
-            
+
             throw new AituApiException(
-                'HTTP request failed: ' . $e->getMessage(),
+                'HTTP request failed: '.$e->getMessage(),
                 $e->getCode(),
                 $e,
                 [
@@ -145,74 +78,9 @@ class HttpClient
     }
 
     /**
-     * Выполнить запрос с формой
-     *
-     * @param string $method
-     * @param string $url
-     * @param array $formData
-     * @param array $options
-     * @return ResponseInterface
-     * @throws AituApiException
-     */
-    public function requestWithForm(string $method, string $url, array $formData = [], array $options = []): ResponseInterface
-    {
-        $options[RequestOptions::FORM_PARAMS] = $formData;
-        $options[RequestOptions::HEADERS]['Content-Type'] = 'application/x-www-form-urlencoded';
-
-        return $this->request($method, $url, $options);
-    }
-
-    /**
-     * Выполнить запрос с multipart данными
-     *
-     * @param string $method
-     * @param string $url
-     * @param array $multipartData
-     * @param array $options
-     * @return ResponseInterface
-     * @throws AituApiException
-     */
-    public function requestWithMultipart(string $method, string $url, array $multipartData = [], array $options = []): ResponseInterface
-    {
-        $options[RequestOptions::MULTIPART] = $multipartData;
-        unset($options[RequestOptions::HEADERS]['Content-Type']); // Guzzle установит автоматически
-
-        return $this->request($method, $url, $options);
-    }
-
-    /**
-     * Получить JSON ответ
-     *
-     * @param ResponseInterface $response
-     * @return array
-     * @throws AituApiException
-     */
-    public function getJsonResponse(ResponseInterface $response): array
-    {
-        $content = $response->getBody()->getContents();
-        
-        if (empty($content)) {
-            return [];
-        }
-
-        $data = json_decode($content, true);
-
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new AituApiException(
-                'Invalid JSON response: ' . json_last_error_msg(),
-                0,
-                null,
-                ['response_body' => $content]
-            );
-        }
-
-        return $data;
-    }
-
-    /**
      * Объединить опции с настройками по умолчанию
      *
-     * @param array $options
+     * @param  array  $options
      * @return array
      */
     private function mergeOptions(array $options): array
@@ -231,9 +99,37 @@ class HttpClient
     }
 
     /**
+     * Логировать запрос (заглушка для будущего логирования)
+     *
+     * @param  string  $method
+     * @param  string  $url
+     * @param  array  $options
+     * @param  ResponseInterface  $response
+     */
+    private function logRequest(string $method, string $url, array $options, ResponseInterface $response): void
+    {
+        // Здесь можно добавить логирование запросов
+        // Например, через Laravel Log или Monolog
+    }
+
+    /**
+     * Логировать ошибку (заглушка для будущего логирования)
+     *
+     * @param  string  $method
+     * @param  string  $url
+     * @param  array  $options
+     * @param  GuzzleException  $exception
+     */
+    private function logError(string $method, string $url, array $options, GuzzleException $exception): void
+    {
+        // Здесь можно добавить логирование ошибок
+        // Например, через Laravel Log или Monolog
+    }
+
+    /**
      * Очистить опции от чувствительных данных для логирования
      *
-     * @param array $options
+     * @param  array  $options
      * @return array
      */
     private function sanitizeOptions(array $options): array
@@ -264,55 +160,163 @@ class HttpClient
     }
 
     /**
-     * Логировать запрос (заглушка для будущего логирования)
+     * Выполнить POST запрос
      *
-     * @param string $method
-     * @param string $url
-     * @param array $options
-     * @param ResponseInterface $response
+     * @param  string  $url
+     * @param  array  $data
+     * @param  array  $options
+     * @return ResponseInterface
+     * @throws AituApiException
      */
-    private function logRequest(string $method, string $url, array $options, ResponseInterface $response): void
+    public function post(string $url, array $data = [], array $options = []): ResponseInterface
     {
-        // Здесь можно добавить логирование запросов
-        // Например, через Laravel Log или Monolog
+        if (!empty($data)) {
+            $options[RequestOptions::JSON] = $data;
+        }
+
+        return $this->request('POST', $url, $options);
     }
 
     /**
-     * Логировать ошибку (заглушка для будущего логирования)
+     * Выполнить PUT запрос
      *
-     * @param string $method
-     * @param string $url
-     * @param array $options
-     * @param GuzzleException $exception
+     * @param  string  $url
+     * @param  array  $data
+     * @param  array  $options
+     * @return ResponseInterface
+     * @throws AituApiException
      */
-    private function logError(string $method, string $url, array $options, GuzzleException $exception): void
+    public function put(string $url, array $data = [], array $options = []): ResponseInterface
     {
-        // Здесь можно добавить логирование ошибок
-        // Например, через Laravel Log или Monolog
+        if (!empty($data)) {
+            $options[RequestOptions::JSON] = $data;
+        }
+
+        return $this->request('PUT', $url, $options);
+    }
+
+    /**
+     * Выполнить PATCH запрос
+     *
+     * @param  string  $url
+     * @param  array  $data
+     * @param  array  $options
+     * @return ResponseInterface
+     * @throws AituApiException
+     */
+    public function patch(string $url, array $data = [], array $options = []): ResponseInterface
+    {
+        if (!empty($data)) {
+            $options[RequestOptions::JSON] = $data;
+        }
+
+        return $this->request('PATCH', $url, $options);
+    }
+
+    /**
+     * Выполнить DELETE запрос
+     *
+     * @param  string  $url
+     * @param  array  $options
+     * @return ResponseInterface
+     * @throws AituApiException
+     */
+    public function delete(string $url, array $options = []): ResponseInterface
+    {
+        return $this->request('DELETE', $url, $options);
+    }
+
+    /**
+     * Выполнить запрос с формой
+     *
+     * @param  string  $method
+     * @param  string  $url
+     * @param  array  $formData
+     * @param  array  $options
+     * @return ResponseInterface
+     * @throws AituApiException
+     */
+    public function requestWithForm(string $method, string $url, array $formData = [], array $options = []): ResponseInterface
+    {
+        $options[RequestOptions::FORM_PARAMS] = $formData;
+        $options[RequestOptions::HEADERS]['Content-Type'] = 'application/x-www-form-urlencoded';
+
+        return $this->request($method, $url, $options);
+    }
+
+    /**
+     * Выполнить запрос с multipart данными
+     *
+     * @param  string  $method
+     * @param  string  $url
+     * @param  array  $multipartData
+     * @param  array  $options
+     * @return ResponseInterface
+     * @throws AituApiException
+     */
+    public function requestWithMultipart(
+        string $method,
+        string $url,
+        array $multipartData = [],
+        array $options = []
+    ): ResponseInterface {
+        $options[RequestOptions::MULTIPART] = $multipartData;
+        unset($options[RequestOptions::HEADERS]['Content-Type']); // Guzzle установит автоматически
+
+        return $this->request($method, $url, $options);
+    }
+
+    /**
+     * Получить JSON ответ
+     *
+     * @param  ResponseInterface  $response
+     * @return array
+     * @throws AituApiException
+     */
+    public function getJsonResponse(ResponseInterface $response): array
+    {
+        $content = $response->getBody()->getContents();
+
+        if (empty($content)) {
+            return [];
+        }
+
+        $data = json_decode($content, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new AituApiException(
+                'Invalid JSON response: '.json_last_error_msg(),
+                0,
+                null,
+                ['response_body' => $content]
+            );
+        }
+
+        return $data;
     }
 
     /**
      * Установить базовый URL для всех запросов
      *
-     * @param string $baseUrl
+     * @param  string  $baseUrl
      * @return self
      */
     public function setBaseUrl(string $baseUrl): self
     {
-        $this->defaultOptions[RequestOptions::BASE_URI] = rtrim($baseUrl, '/') . '/';
+        $this->defaultOptions[RequestOptions::BASE_URI] = rtrim($baseUrl, '/').'/';
         return $this;
     }
 
     /**
      * Установить заголовок авторизации
      *
-     * @param string $token
-     * @param string $type
+     * @param  string  $token
+     * @param  string  $type
      * @return self
      */
     public function setAuthorizationHeader(string $token, string $type = 'Bearer'): self
     {
-        $this->defaultOptions[RequestOptions::HEADERS]['Authorization'] = $type . ' ' . $token;
+        $this->defaultOptions[RequestOptions::HEADERS]['Authorization'] = $type.' '.$token;
         return $this;
     }
 

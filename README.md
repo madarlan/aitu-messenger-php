@@ -6,11 +6,11 @@
 
 <div align="center">
 
-[![Latest Version](https://img.shields.io/packagist/v/madarlan/aitu-messenger-php-sdk?style=flat-square&color=blue)](https://packagist.org/packages/madarlan/aitu-messenger-php-sdk)
-[![Tests](https://img.shields.io/github/actions/workflow/status/madarlan/aitu-messenger-php-sdk/run-tests.yml?branch=main&label=tests&style=flat-square&color=green)](https://github.com/madarlan/aitu-messenger-php-sdk/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![Code Style](https://img.shields.io/github/actions/workflow/status/madarlan/aitu-messenger-php-sdk/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square&color=orange)](https://github.com/madarlan/aitu-messenger-php-sdk/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![License](https://img.shields.io/packagist/l/madarlan/aitu-messenger-php-sdk?style=flat-square&color=purple)](https://packagist.org/packages/madarlan/aitu-messenger-php-sdk)
-[![PHP Version](https://img.shields.io/packagist/php-v/madarlan/aitu-messenger-php-sdk?style=flat-square&color=777BB4)](https://packagist.org/packages/madarlan/aitu-messenger-php-sdk)
+[![Latest Version](https://img.shields.io/packagist/v/madarlan/aitu-messenger-php?style=flat-square&color=blue)](https://packagist.org/packages/madarlan/aitu-messenger-php)
+[![Tests](https://img.shields.io/github/actions/workflow/status/madarlan/aitu-messenger-php/run-tests.yml?branch=main&label=tests&style=flat-square&color=green)](https://github.com/madarlan/aitu-messenger-php/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![Code Style](https://img.shields.io/github/actions/workflow/status/madarlan/aitu-messenger-php/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square&color=orange)](https://github.com/madarlan/aitu-messenger-php/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![License](https://img.shields.io/packagist/l/madarlan/aitu-messenger-php?style=flat-square&color=purple)](https://packagist.org/packages/madarlan/aitu-messenger-php)
+[![PHP Version](https://img.shields.io/packagist/php-v/madarlan/aitu-messenger-php?style=flat-square&color=777BB4)](https://packagist.org/packages/madarlan/aitu-messenger-php)
 
 **🎯 Aitu Messenger API-мен интеграциялауға арналған заманауи PHP SDK**
 
@@ -117,7 +117,7 @@
 ### 🎯 Composer арқылы жылдам орнату
 
 ```bash
-composer require madarlan/aitu-messenger-php-sdk
+composer require madarlan/aitu-messenger-php
 ```
 
 ### ⚡ Laravel үшін автоматты баптау
@@ -839,8 +839,8 @@ LOG_LEVEL=debug
 ### 💬 Бізбен байланыс
 
 [![Email](https://img.shields.io/badge/Email-madinovarlan%40gmail.com-blue?style=for-the-badge&logo=gmail)](mailto:madinovarlan@gmail.com)
-[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-green?style=for-the-badge&logo=github)](https://github.com/madarlan/aitu-messenger-php-sdk/issues)
-[![Documentation](https://img.shields.io/badge/Docs-Wiki-orange?style=for-the-badge&logo=gitbook)](https://github.com/madarlan/aitu-messenger-php-sdk/wiki)
+[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-green?style=for-the-badge&logo=github)](https://github.com/madarlan/aitu-messenger-php/issues)
+[![Documentation](https://img.shields.io/badge/Docs-Wiki-orange?style=for-the-badge&logo=gitbook)](https://github.com/madarlan/aitu-messenger-php/wiki)
 
 </div>
 
@@ -907,9 +907,9 @@ copies or substantial portions of the Software.
 
 ### ⭐ Жоба пайдалы болса, жұлдызша қойыңыз!
 
-[![GitHub stars](https://img.shields.io/github/stars/madarlan/aitu-messenger-php-sdk?style=social)](https://github.com/madarlan/aitu-messenger-php-sdk/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/madarlan/aitu-messenger-php-sdk?style=social)](https://github.com/madarlan/aitu-messenger-php-sdk/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/madarlan/aitu-messenger-php-sdk?style=social)](https://github.com/madarlan/aitu-messenger-php-sdk/watchers)
+[![GitHub stars](https://img.shields.io/github/stars/madarlan/aitu-messenger-php?style=social)](https://github.com/madarlan/aitu-messenger-php/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/madarlan/aitu-messenger-php?style=social)](https://github.com/madarlan/aitu-messenger-php/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/madarlan/aitu-messenger-php?style=social)](https://github.com/madarlan/aitu-messenger-php/watchers)
 
 ---
 
